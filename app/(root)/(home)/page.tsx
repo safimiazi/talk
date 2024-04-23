@@ -19,25 +19,12 @@ const Home = () => {
     );
   };
 
-  const [currentDateTimeBD, setCurrentDateTimeBD] = useState('');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlide();
     }, 4000);
-    const currentDate = new Date();
-    const options = {
-      timeZone: 'Asia/Dhaka',
-      hour12: true,
-      hour: 'numeric',
-      minute: 'numeric',
-
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    };
-    setCurrentDateTimeBD(currentDate.toLocaleString('en-US', options));
+ 
     return () => clearInterval(intervalId);
   }, []);
   return (
@@ -53,7 +40,6 @@ const Home = () => {
           />
         </div>
         <div className="absolute bottom-4 left-3">
-          <h4 className="font-bold md:text-3xl">{currentDateTimeBD}</h4>
         </div>
       </div>
      </div>
