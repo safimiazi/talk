@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 
+interface ChatItem {
+ role: string;
+ parts: string;
+}
+
 const AiChat = () => {
   const [error, setError] = useState('');
   const [value, setValue] = useState('');
-  const [chatHistory, setChatHistory] = useState([]);
+  const [chatHistory, setChatHistory] = useState<ChatItem[]>([]);
   const [loading, setLoading] = useState(false); // New loading state
 
   console.log('hello', chatHistory);
