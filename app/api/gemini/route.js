@@ -4,7 +4,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
 
 export async function POST(req){
     const data = await req.json();
-    const { history, message } = data;
+    const { message } = data;
 
     // Set up the model with the provided prompt
     const model = genAI.getGenerativeModel({
